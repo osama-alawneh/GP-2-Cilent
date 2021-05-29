@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/images/favicon.ico">
+  <title>COVID-19 Healthcare system</title>
+  <link rel="stylesheet" href="./index.css">
+
+</head>
+
+<body>
+
+<div class="container" id="container">
+  <div class="form-container sign-up-container">
+    <form id="sign-up" action="/api/v1/auth/register" method="post">
+      <h1>Create Account</h1>
+      <div id="sign-up-errors" style="margin: 5px;padding: 5px;color: red;"></div>
+      <br>
+      <input id="first-name" name="firstName" type="text" placeholder="First Name" />
+      <input id="last-name" name="lastName" type="text" placeholder="Last Name"/>
+      <input id="national-id" name="nationalId" type="text" placeholder="National ID" />
+      <input id="email" name="email" type="email" placeholder="Email"/>
+      <input id="password" name="password" type="password" placeholder="Password" />
+      <input name="birthdate" class="date" type="date" placeholder="Birthdate" />
+      <select name="gender" id="gender">
+        <option selected disabled style="display: none;" value="gender">Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+
+      <input id="home-address" name="homeAddress" type="home" placeholder="Home Address" />
+      <input id="phone-number" name="phoneNumber" type="phone" placeholder="Phone Number" />
+      <br>
+      <p class="error-container"></p>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+  <div class="form-container sign-in-container">
+    <form id="sign-in" action="/api/v1/auth/login" method="post">
+      <h1>Sign in</h1>
+      <div id="sign-in-errors" style="margin: 5px;padding: 5px;color: red;"></div>
+      <br>
+      <input name="nationalId" type="text" placeholder="National ID"/>
+      <input name="password" type="password" placeholder="Password"/>
+      <button type="submit">Sign In</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Welcome Back!</h1>
+        <p>To keep connected with us please login with your personal info</p>
+        <button class="ghost" id="sign-in-button">Sign In</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>Hello, Friend!</h1>
+        <p>Welcome to COVID-19 Healthcare System</p>
+        <button class="ghost" id="sign-up-button">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>
+    Your Trust COVID-19 Healthcare Distance Monitoring System
+  </p>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="./index.js"></script>
+</body>
+
+</html>
